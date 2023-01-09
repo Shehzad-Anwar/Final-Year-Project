@@ -1,6 +1,4 @@
 import React from "react";
-import Footer from "../components/home/Footer";
-import Navbar from "../components/home/Navbar";
 import {
   CheckIcon,
   ClockIcon,
@@ -69,9 +67,6 @@ const cart = () => {
             Get free delivery on orders over Rs 3000/-
           </p>
         </header>
-
-        {/* NAVIGATION BAR */}
-        <Navbar />
 
         <main className="mx-auto max-w-2xl px-4 pt-16 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -304,8 +299,6 @@ const cart = () => {
           </section>
         </main>
       </div>
-
-      <Footer />
     </>
   );
 };

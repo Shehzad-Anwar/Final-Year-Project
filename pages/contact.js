@@ -1,15 +1,11 @@
 import ContactForm from "../components/contact/ContactFrom";
-import Footer from "../components/home/Footer";
 import Newsletter from "../components/home/Newsletter";
-import Navbar from "../components/home/Navbar";
 import Faqs from "../components/home/Faqs";
 
 const contact = () => {
   return (
     <>
       <>
-        <Navbar />
-
         <header className="relative mb-20 bg-sky-800 pb-24 sm:pb-32">
           <div className="absolute inset-0">
             <img
@@ -23,11 +19,10 @@ const contact = () => {
             />
           </div>
 
-          {/* NAVIGATION BAR */}
-          <nav
+          <div
             className="relative mx-auto flex max-w-7xl items-center justify-between px-4 pt-6 pb-2 sm:px-6 lg:px-8"
             aria-label="Global"
-          ></nav>
+          ></div>
 
           <div className="relative mx-auto mt-24 max-w-md px-4 sm:mt-32 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -45,7 +40,6 @@ const contact = () => {
       <ContactForm />
       <Faqs />
       <Newsletter />
-      <Footer />
     </>
   );
 };

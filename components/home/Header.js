@@ -38,7 +38,7 @@ const Header = () => {
           <div className="relative h-64 w-full sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2">
             <img
               className="absolute inset-0 h-full w-full object-cover object-top"
-              src="/Mens_Shawl_1800x1800.jpg"
+              src="/Mens_Shawl.png"
               alt=""
             />
           </div>
