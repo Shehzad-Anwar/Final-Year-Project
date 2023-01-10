@@ -16,8 +16,7 @@ const order = () => {
       step: 1,
       date: "March 24, 2021",
       datetime: "2021-03-24",
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/confirmation-page-04-product-01.jpg",
+      imageSrc: "/Mens_Shawl.png",
       imageAlt:
         "Off-white t-shirt with circular dot illustration on the front of mountain ridges that fade.",
     },
