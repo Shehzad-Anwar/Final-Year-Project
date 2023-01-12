@@ -1,6 +1,19 @@
 import React from "react";
 
 const order = () => {
+  const product = [
+    {
+      id: 1,
+      name: "Men's Shawl",
+      href: "#",
+      price: "$36.00",
+      status: "Delivered Jan 25, 2021",
+      imageSrc: "/Mens_Shawl.png",
+      imageAlt:
+        "Black tee with intersecting red, white, and green curved lines on front.",
+    },
+  ];
+
   const products = [
     {
       id: 1,
@@ -13,10 +26,10 @@ const order = () => {
       phone: "1•••••••••40",
       href: "#",
       status: "Processing",
-      step: 1,
+      step: 0,
       date: "March 24, 2021",
       datetime: "2021-03-24",
-      imageSrc: "/Mens_Shawl.png",
+      imageSrc: "/Mens_Shaw.png",
       imageAlt:
         "Off-white t-shirt with circular dot illustration on the front of mountain ridges that fade.",
     },
@@ -26,11 +39,11 @@ const order = () => {
   return (
     <>
       <div className="bg-white">
-        <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        {/* Order Detail section */}
+        <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-            Order Details
+            Order Detail
           </h1>
-
           <div className="mt-2 border-b border-gray-200 pb-5 text-sm sm:flex sm:justify-between">
             <dl className="flex">
               <dt className="text-gray-500">Order number&nbsp;</dt>
@@ -45,75 +58,99 @@ const order = () => {
                 <time dateTime="2021-03-22">March 22, 2021</time>
               </dd>
             </dl>
-            <div className="mt-4 sm:mt-0">
-              <a
-                href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                View invoice
-                <span aria-hidden="true"> &rarr;</span>
-              </a>
-            </div>
           </div>
 
+          {/* Product */}
           <section aria-labelledby="products-heading" className="mt-8">
             <h2 id="products-heading" className="sr-only">
               Products purchased
             </h2>
+            <table className="mt-4 w-full  text-gray-500 sm:mt-6">
+              <caption className="sr-only">Products</caption>
+              <thead className="sr-only text-left text-sm text-gray-500 sm:not-sr-only">
+                <tr>
+                  <th
+                    scope="col"
+                    className="py-3 pr-8 font-normal sm:w-2/5 lg:w-1/3"
+                  >
+                    Product
+                  </th>
 
+                  <th
+                    scope="col"
+                    className="hidden w-1/5 py-3 pr-16 font-normal sm:table-cell"
+                  >
+                    Size
+                  </th>
+                  <th
+                    scope="col"
+                    className="hidden w-1/5 py-3 pr-16 font-normal sm:table-cell"
+                  >
+                    Colour
+                  </th>
+                  <th
+                    scope="col"
+                    className="hidden w-1/5 py-3 pr-16 font-normal sm:table-cell"
+                  >
+                    Quantity
+                  </th>
+                  <th
+                    scope="col"
+                    className="hidden w-1/5 py-3 pr-16 font-normal sm:table-cell"
+                  >
+                    Price
+                  </th>
+                  <th
+                    scope="col"
+                    className="hidden w-1/5 py-3 pr-16 font-normal sm:table-cell"
+                  >
+                    Status
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200 border-b border-gray-200 text-sm sm:border-t">
+                {product.map((product) => (
+                  <tr key={product.id}>
+                    <td className="py-6">
+                      <div className="flex items-center">
+                        <img
+                          src={product.imageSrc}
+                          alt={product.imageAlt}
+                          className="mr-6 h-16 w-16 rounded object-cover object-center"
+                        />
+                        <div>
+                          <div className="font-medium text-gray-900">
+                            {product.name}
+                          </div>
+                          <div className="mt-1 sm:hidden">{product.price}</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="hidden py-6 pr-20 sm:table-cell">Small</td>
+                    <td className="hidden py-6 pr-20 sm:table-cell">Color</td>
+                    <td className="hidden py-6 pr-20 sm:table-cell">
+                      Quantity
+                    </td>
+                    <td className="hidden py-6 pr-20 sm:table-cell">
+                      {product.price}
+                    </td>
+
+                    <td className="hidden py-6 sm:table-cell">
+                      {product.status}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* Progress bar */}
             <div className="space-y-24">
               {products.map((product) => (
                 <div
                   key={product.id}
                   className="grid grid-cols-1 text-sm sm:grid-cols-12 sm:grid-rows-1 sm:gap-x-6 md:gap-x-8 lg:gap-x-8"
                 >
-                  <div className="sm:col-span-4 md:col-span-5 md:row-span-2 md:row-end-2">
-                    <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-50">
-                      <img
-                        src={product.imageSrc}
-                        alt={product.imageAlt}
-                        className="object-cover object-center"
-                      />
-                    </div>
-                  </div>
-                  <div className="mt-6 sm:col-span-7 sm:mt-0 md:row-end-1">
-                    <h3 className="text-lg font-medium text-gray-900">
-                      <a href={product.href}>{product.name}</a>
-                    </h3>
-                    <p className="mt-1 font-medium text-gray-900">
-                      {product.price}
-                    </p>
-                    <p className="mt-3 text-gray-500">{product.description}</p>
-                  </div>
                   <div className="sm:col-span-12 md:col-span-7">
-                    <dl className="grid grid-cols-1 gap-y-8 border-b border-gray-200 py-8 sm:grid-cols-2 sm:gap-x-6 sm:py-6 md:py-10">
-                      <div>
-                        <dt className="font-medium text-gray-900">
-                          Delivery address
-                        </dt>
-                        <dd className="mt-3 text-gray-500">
-                          <span className="block">{product.address[0]}</span>
-                          <span className="block">{product.address[1]}</span>
-                          <span className="block">{product.address[2]}</span>
-                        </dd>
-                      </div>
-                      <div>
-                        <dt className="font-medium text-gray-900">
-                          Shipping updates
-                        </dt>
-                        <dd className="mt-3 space-y-3 text-gray-500">
-                          <p>{product.email}</p>
-                          <p>{product.phone}</p>
-                          <button
-                            type="button"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
-                          >
-                            Edit
-                          </button>
-                        </dd>
-                      </div>
-                    </dl>
-
                     {/* Status Bar Area */}
                     <p className="mt-6 font-medium text-gray-900 md:mt-10">
                       {product.status} on{" "}
@@ -163,7 +200,7 @@ const order = () => {
           </section>
 
           {/* Billing */}
-          <section aria-labelledby="summary-heading" className="mt-24">
+          <section aria-labelledby="summary-heading" className="mt-20">
             <h2 id="summary-heading" className="sr-only">
               Billing Summary
             </h2>
