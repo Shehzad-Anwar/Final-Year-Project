@@ -1,3 +1,4 @@
+import { Tabs } from "flowbite-react";
 import React from "react";
 
 const OurProducts = () => {
@@ -58,7 +59,7 @@ const OurProducts = () => {
       </div>
 
       {/* Hot Products Tab*/}
-      <div className="my-10 bg-white" id="#Tab1">
+      <div className="my-10 bg-white">
         <div className="mx-auto max-w-7xl overflow-hidden sm:px-6 lg:px-8">
           <h2 className="sr-only">Products</h2>
 

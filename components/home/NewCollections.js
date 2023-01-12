@@ -1,3 +1,4 @@
+import { Carousel } from "flowbite-react";
 import React from "react";
 
 const NewCollections = () => {
@@ -47,6 +48,9 @@ const NewCollections = () => {
               <span aria-hidden="true"> &rarr;</span>
             </a>
           </div>
+
+          {/* Products */}
+
           <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             {products.map((product) => (
               <div key={product.id} className="group relative">
@@ -65,6 +69,7 @@ const NewCollections = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="mt-4 flex items-center justify-between space-x-8 text-base font-medium text-gray-900">
                   <h3>
                     <a href="#">
