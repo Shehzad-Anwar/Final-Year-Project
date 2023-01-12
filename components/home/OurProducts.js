@@ -1,4 +1,3 @@
-import { Tabs } from "flowbite-react";
 import React from "react";
 
 const OurProducts = () => {
